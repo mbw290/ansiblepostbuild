@@ -29,5 +29,9 @@
       enabled: yes
       name: docker
 
-
-
+  - name: Container present
+    docker_container:
+      name: mycontainer
+      state: present
+      image: ubuntu:20.04
+      command: sleep infinity
