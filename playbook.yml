@@ -44,5 +44,5 @@
     docker_container:
       name: mycontainer
       state: started
-      image: ubuntu:20.04
+      image: httpd
       command: sleep infinity
