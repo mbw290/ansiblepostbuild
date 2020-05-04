@@ -16,10 +16,12 @@
     yum:
       name: '*'
       state: latest
+    register: updated
 
-  - name: Disable SELinux
-    selinux:
-      state: disabled
+- name: Put SELinux in permissive mode, logging actions that would be blocked.
+  selinux:
+    policy: targeted
+    state: permissive
 
   - name: start and enable docker
     systemd:
