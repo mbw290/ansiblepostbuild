@@ -43,6 +43,6 @@
   - name: Container present
     docker_container:
       name: mycontainer
-      state: present
+      state: started
       image: ubuntu:20.04
       command: sleep infinity
