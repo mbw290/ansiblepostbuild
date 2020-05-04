@@ -11,6 +11,7 @@
         - wget
         - git
         - docker
+        - epel-release
 
   - name: upgrade all packages
     yum:
@@ -28,6 +29,11 @@
       state: started
       enabled: yes
       name: docker
+
+  - name: install python pip
+    yum:
+      name: python-pip
+      state: latest
 
   - name: Container present
     docker_container:
