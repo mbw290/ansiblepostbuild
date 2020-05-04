@@ -10,10 +10,22 @@
         - vim
         - wget
         - git
+        - docker
 
   - name: upgrade all packages
     yum:
       name: '*'
       state: latest
+
+  - name: Disable SELinux
+    selinux:
+      state: disabled
+
+  - name: start and enable docker
+    systemd:
+      state: started
+      enabled: yes
+      name: docker
+
 
 
