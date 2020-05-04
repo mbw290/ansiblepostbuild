@@ -2,7 +2,12 @@
 - hosts: all
   become: true
   tasks:
-    - name: install vim
-      yum:
-        name: vim
-        state: latest
+  - name: ensure a list of packages installed
+    yum:
+      name: "{{ packages }}"
+    vars:
+      packages:
+        - vim
+        - wget
+        - git
+
