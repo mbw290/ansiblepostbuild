@@ -33,10 +33,11 @@
     pip:
       name: docker
 
-
   - name: Container present
     docker_container:
       name: mycontainer
       state: started
       image: httpd
-      command: sleep infinity
+      published_ports: 80:80
+
+
