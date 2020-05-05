@@ -13,12 +13,6 @@
         - docker
         - epel-release
 
-  - name: upgrade all packages
-    yum:
-      name: '*'
-      state: latest
-    register: updated
-
   - name: Put SELinux in permissive mode, logging actions that would be blocked.
     selinux:
       policy: targeted
